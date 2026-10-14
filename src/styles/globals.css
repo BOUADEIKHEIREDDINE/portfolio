@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global layout / typography */
+html,
+body {
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+  background-color: #020617; /* dark-background */
+  color: #e5e7eb;
+  font-family: "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Subtle animated grid background helper */
+.grid-overlay {
+  position: absolute;
+  inset: -1px;
+  background-image: linear-gradient(
+      rgba(148, 163, 184, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(148, 163, 184, 0.08) 1px,
+      transparent 1px
+    );
+  background-size: 40px 40px;
+  opacity: 0.4;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  animation: grid-move 20s linear infinite;
+}
+
+/* Terminal-style windows */
+.terminal-window {
+  @apply rounded-xl border border-slate-700 bg-slate-950/80 shadow-glow-blue overflow-hidden;
+}
+
+.terminal-bar {
+  @apply flex items-center gap-1 px-3 py-2 bg-slate-900 border-b border-slate-800;
+}
+
+.terminal-button {
+  @apply h-2.5 w-2.5 rounded-full;
+}
+
+.terminal-button.red {
+  background-color: #f97373;
+}
+
+.terminal-button.yellow {
+  background-color: #facc15;
+}
+
+.terminal-button.green {
+  background-color: #22c55e;
+}
+
+.terminal-content {
+  @apply px-4 py-3 text-sm leading-relaxed text-slate-100;
+}
+
+/* Code block card */
+.code-block {
+  @apply relative rounded-xl border border-slate-800 bg-slate-950/80 p-4 text-sm text-slate-100 shadow-md transition-transform transition-shadow hover:-translate-y-1 hover:shadow-glow-blue;
+}
+
+.code-block::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    rgba(125, 211, 252, 0.7),
+    rgba(248, 250, 252, 0),
+    rgba(250, 204, 21, 0.7),
+    rgba(248, 250, 252, 0)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  pointer-events: none;
+}
+
+.code-block:hover::before {
+  opacity: 0.25;
+}
+
+/* Hero editor-style window */
+.editor-window {
+  @apply rounded-2xl border border-slate-800 bg-slate-950/90 shadow-2xl shadow-glow-blue overflow-hidden backdrop-blur;
+}
+
+.editor-header {
+  @apply flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-800;
+}
+
+.editor-tabs {
+  @apply flex items-center gap-2 text-xs;
+}
+
+.editor-tab {
+  @apply flex items-center gap-1 rounded-md px-2 py-1 text-slate-400 bg-slate-900/60 border border-transparent;
+}
+
+.editor-tab--active {
+  @apply bg-slate-800 text-slate-100 border-slate-700;
+}
+
+.editor-body {
+  @apply flex text-sm;
+}
+
+.editor-gutter {
+  @apply select-none border-r border-slate-800 bg-slate-950/90 px-3 py-3 text-xs text-slate-500;
+}
+
+.editor-code {
+  @apply relative flex-1 overflow-hidden px-4 py-3 font-mono text-[13px] leading-relaxed text-slate-100;
+}
+
+.editor-cursor {
+  @apply inline-block w-[0.6ch] h-[1.1em] translate-y-[1px] bg-python-orange/80 align-baseline animate-cursor-blink;
+}
+
+/* Scrollbar styling for code areas */
+.editor-code::-webkit-scrollbar,
+.terminal-content::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.editor-code::-webkit-scrollbar-thumb,
+.terminal-content::-webkit-scrollbar-thumb {
+  background-color: rgba(148, 163, 184, 0.6);
+  border-radius: 9999px;
+}
+
+.editor-code::-webkit-scrollbar-track,
+.terminal-content::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
