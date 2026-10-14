@@ -50,6 +50,8 @@ const Skills: React.FC = () => {
     {
       title: "certifications.txt",
       lines: [
+        "2026  Microsoft Power BI",
+        "2025  Microsoft Power Platform",
         "2025  Microsoft Certification (Azure / AI)",
         "2020  DELF",
         "Master AI & Data Science (in progress)"
