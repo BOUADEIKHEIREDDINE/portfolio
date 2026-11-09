@@ -400,12 +400,12 @@ export function Contact() {
       <div className="container-x pb-10 pt-24 sm:pt-36">
         <p className="label text-white/50">(07) Contact</p>
         <h2 className="mt-8 font-serif text-[clamp(3.8rem,13vw,11rem)] leading-[0.86] tracking-[-0.02em]">
-          <span className="block overflow-hidden">
+          <span className="-mb-[0.16em] block overflow-hidden pb-[0.16em]">
             <motion.span className="block" initial={{ y: "100%" }} whileInView={{ y: 0 }} viewport={{ once: true }} transition={{ duration: 1, ease }}>
               Let&apos;s build
             </motion.span>
           </span>
-          <span className="block overflow-hidden">
+          <span className="-mb-[0.16em] block overflow-hidden pb-[0.16em]">
             <motion.span className="block italic text-accent" initial={{ y: "100%" }} whileInView={{ y: 0 }} viewport={{ once: true }} transition={{ duration: 1, ease, delay: 0.1 }}>
               something.
             </motion.span>
