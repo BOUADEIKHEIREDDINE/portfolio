@@ -1,7 +1,7 @@
 import { motion, useInView, useScroll, useTransform, animate, MotionValue } from "framer-motion";
 import { useEffect, useRef, useState, ComponentType } from "react";
 import dynamic from "next/dynamic";
-import { profile, stats, experience, projects, skills, languages, education, certifications, Entry, DemoKind } from "@/data/content";
+import { profile, stats, experience, projects, skills, languages, education, certifications, hobbies, Entry, DemoKind } from "@/data/content";
 import { Reveal, SectionHeader, DemoCaption, Arrow, ease } from "./ui";
 import { SkillIcon, tickerIcons, SiGithub, SiLinkedin } from "./icons";
 
@@ -317,6 +317,71 @@ export function Credentials() {
   );
 }
 
+/* ───────────── Hobbies ───────────── */
+
+function HobbyIcon({ id }: { id: string }) {
+  if (id === "fitness")
+    return (
+      <svg viewBox="0 0 64 64" className="h-14 w-14 transition-transform duration-700 group-hover:-rotate-12" aria-hidden>
+        <g fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+          <path d="M20 32h24" />
+          <rect x="10" y="20" width="8" height="24" rx="2" />
+          <rect x="46" y="20" width="8" height="24" rx="2" />
+          <path d="M6 26v12M58 26v12" />
+        </g>
+      </svg>
+    );
+  return (
+    <svg viewBox="0 0 64 64" className="h-14 w-14 transition-transform duration-700 group-hover:scale-110" aria-hidden>
+      <g fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M24 20L12 32l12 12M40 20l12 12-12 12M35 16l-6 32" />
+      </g>
+    </svg>
+  );
+}
+
+export function Hobbies() {
+  return (
+    <section id="hobbies" className="container-x pb-24 sm:pb-32">
+      <SectionHeader index="06" label="Hobbies" title="Off the clock" />
+      <div className="grid gap-4 md:grid-cols-2">
+        {hobbies.map((h, i) => (
+          <Reveal key={h.id} delay={i * 0.1} className="h-full">
+            <article className="group grain flex h-full flex-col rounded-[14px] border border-ink p-6 sm:p-10" style={{ background: h.tint }}>
+              <div className="flex items-start justify-between">
+                <HobbyIcon id={h.id} />
+                <span className="font-mono text-[11px] text-ink/60">0{i + 1}</span>
+              </div>
+              <h3 className="mt-10 font-serif text-[clamp(2.4rem,4.5vw,3.6rem)] leading-[0.95]">{h.title}</h3>
+              {h.line && <p className="mt-4 max-w-[46ch] text-[16px] leading-snug">{h.line}</p>}
+              {h.links.length > 0 && (
+                <ul className="mt-8 border-t border-ink/20">
+                  {h.links.map((l) => (
+                    <li key={l.label}>
+                      <a
+                        href={l.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="group/link flex items-center justify-between gap-4 border-b border-ink/20 py-3 transition-colors hover:border-ink"
+                      >
+                        <span>
+                          <span className="block text-[15px] font-medium">{l.label}</span>
+                          <span className="block text-[13px] text-ink/70">{l.note}</span>
+                        </span>
+                        <Arrow className="shrink-0 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </article>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 /* ───────────── Contact ───────────── */
 
 export function Contact() {
@@ -333,7 +398,7 @@ export function Contact() {
   return (
     <section id="contact" className="bg-ink text-paper">
       <div className="container-x pb-10 pt-24 sm:pt-36">
-        <p className="label text-white/50">(06) Contact</p>
+        <p className="label text-white/50">(07) Contact</p>
         <h2 className="mt-8 font-serif text-[clamp(3.8rem,13vw,11rem)] leading-[0.86] tracking-[-0.02em]">
           <span className="block overflow-hidden">
             <motion.span className="block" initial={{ y: "100%" }} whileInView={{ y: 0 }} viewport={{ once: true }} transition={{ duration: 1, ease }}>

@@ -10,6 +10,7 @@ const links = [
   { href: "#projects", label: "Projects" },
   { href: "#skills", label: "Skills" },
   { href: "#credentials", label: "Credentials" },
+  { href: "#hobbies", label: "Hobbies" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -164,7 +165,7 @@ export function Hero() {
             <motion.img
               src={`${base}/photo/portrait.jpg`}
               alt="Portrait of Kheireddine Bouadi"
-              className="h-[118%] w-full object-cover object-top grayscale"
+              className="h-[118%] w-full object-cover object-top"
               style={{ y: imgY }}
               initial={{ scale: 1.25 }}
               animate={{ scale: 1 }}

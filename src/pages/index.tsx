@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Nav, Hero } from "@/components/Hero";
-import { Ticker, About, Experience, Projects, Skills, Credentials, Contact } from "@/components/Sections";
+import { Ticker, About, Experience, Projects, Skills, Credentials, Hobbies, Contact } from "@/components/Sections";
 
 export default function Home() {
   return (
@@ -21,6 +21,7 @@ export default function Home() {
         <Projects />
         <Skills />
         <Credentials />
+        <Hobbies />
         <Contact />
       </main>
     </>

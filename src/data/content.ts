@@ -204,3 +204,20 @@ export const certifications = [
   { code: "AZURE", name: "Microsoft Certification, Azure / AI", issuer: "Microsoft", year: "2025", href: "" },
   { code: "DELF", name: "Diplôme d'études en langue française", issuer: "France Éducation international", year: "2020", href: "" },
 ];
+
+export const hobbies = [
+  {
+    id: "fitness",
+    title: "Fitness",
+    line: "Proof of extreme discipline.",
+    tint: "#ffdcd0",
+    links: [] as { label: string; note: string; href: string }[],
+  },
+  {
+    id: "building",
+    title: "Building side projects",
+    line: "",
+    tint: "#dde7ff",
+    links: [] as { label: string; note: string; href: string }[],
+  },
+];
