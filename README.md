@@ -1,86 +1,34 @@
-# AI & Software Developer Portfolio
+# Portfolio · Kheireddine Bouadi
 
-This portfolio website showcases your skills and projects as an **AI & Software Developer**.  
-It's built with **Next.js**, **React**, **TypeScript**, **Tailwind CSS**, **Three.js**, and **EmailJS**.
+Minimal black & white portfolio with live, animated demos of each project.
+Live at https://bouadeikheireddine.github.io/portfolio/
 
-The design emulates a dark, VSCode-style Python coding environment with terminal aesthetics, code windows, and animated typing.
+## Stack
 
-## Tech Stack
+Next.js 14 (pages router, static export) · TypeScript · Tailwind CSS · Framer Motion · react-icons.
+Fonts: Instrument Serif, IBM Plex Sans, IBM Plex Mono (via `next/font`).
 
-- **Framework**: Next.js 14 (Pages Router)
-- **Language**: TypeScript + React
-- **Styling**: Tailwind CSS, custom utility classes
-- **3D**: Three.js (custom rotating Python-inspired torus)
-- **Animations**: typed.js, Tailwind keyframes, framer-motion-ready
-- **Contact**: EmailJS (client-side form)
+## Content
 
-## Getting Started
+All text lives in `src/data/content.ts` and mirrors the ATS CV. Edit it there; the sections read from it.
 
-1. Install dependencies:
+## Demos
+
+`src/components/demos/` holds one animated mock UI per project (Android HR app, TOEIC generator,
+financial ratio engine, clinical RAG, weather alerts, market dashboard). They loop while on screen,
+respect `prefers-reduced-motion`, and use **synthetic data only**: no client names, documents or figures.
+
+## Run
 
 ```bash
 npm install
+npm run dev          # http://localhost:3000
 ```
 
-2. Run the development server:
+## Deploy (GitHub Pages, `gh-pages` branch)
 
 ```bash
-npm run dev
+NEXT_PUBLIC_BASE_PATH=/portfolio npm run build   # outputs ./out
+touch out/.nojekyll
+# publish ./out to the gh-pages branch
 ```
-
-3. Open your browser at:
-
-```bash
-http://localhost:3000
-```
-
-## Project Structure
-
-```bash
-portfolio/
-  package.json
-  tsconfig.json
-  tailwind.config.js
-  postcss.config.js
-  next.config.js
-  next-env.d.ts
-  README.md
-  src/
-    pages/
-      _app.tsx
-      _document.tsx
-      index.tsx
-    components/
-      Hero.tsx
-      About.tsx
-      Skills.tsx
-      Projects.tsx
-      CodeWindow.tsx
-      Experience.tsx
-      Contact.tsx
-      Footer.tsx
-    styles/
-      globals.css
-```
-
-## Environment Variables (EmailJS)
-
-To enable the terminal-style contact form, create a `.env.local` file in the project root:
-
-```bash
-NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
-```
-
-Obtain these values from your EmailJS dashboard.
-
-If these are missing, the site will still run, but form submissions will log a warning in the console instead of sending email.
-
-## Accessibility & Responsiveness
-
-- Semantic sections and headings for screen readers.
-- High-contrast dark theme with Python-inspired colors.
-- Responsive layout from mobile to large desktop screens.
-- Focus-visible states on interactive elements.
-
