@@ -36,6 +36,7 @@ export type Entry = {
   stack: string[];
   link?: { href: string; label: string };
   demo: DemoKind;
+  tint: string;
 };
 
 export const experience: Entry[] = [
@@ -55,6 +56,7 @@ export const experience: Entry[] = [
     ],
     stack: ["Kotlin", "Jetpack Compose", "MVVM", "REST APIs", "Material 3", "Gradle"],
     demo: "phone",
+    tint: "#dde7ff",
   },
   {
     id: "naimrod",
@@ -71,6 +73,7 @@ export const experience: Entry[] = [
     ],
     stack: ["Python", "NLP", "Gemini API", "LLM"],
     demo: "quiz",
+    tint: "#fff0b8",
   },
 ];
 
@@ -90,6 +93,7 @@ export const projects: Entry[] = [
     ],
     stack: ["Python", "PDF extraction", "Finance", "Unit testing"],
     demo: "ratios",
+    tint: "#d4f0de",
   },
   {
     id: "cerc",
@@ -107,6 +111,7 @@ export const projects: Entry[] = [
     stack: ["RAG", "Mistral", "Ollama", "BGE-M3", "ChromaDB", "FastAPI", "React", "Vite"],
     link: { href: "https://github.com/BOUADEIKHEIREDDINE/CERC-RAG", label: "Source on GitHub" },
     demo: "rag",
+    tint: "#ffdde4",
   },
   {
     id: "wellpack",
@@ -123,6 +128,7 @@ export const projects: Entry[] = [
     stack: ["Flask", "Open-Meteo", "pandas", "openpyxl", "APScheduler"],
     link: { href: "https://github.com/BOUADEIKHEIREDDINE/Wellpack-Trigger-Meteo", label: "Source on GitHub" },
     demo: "weather",
+    tint: "#d6eefc",
   },
   {
     id: "egerine",
@@ -140,6 +146,7 @@ export const projects: Entry[] = [
     stack: ["Recommender systems", "BeautifulSoup", "Streamlit", "Plotly", "pandas"],
     link: { href: "https://github.com/BOUADEIKHEIREDDINE/egerine-recommandations", label: "Source on GitHub" },
     demo: "market",
+    tint: "#ebe1ff",
   },
 ];
 

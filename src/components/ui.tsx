@@ -134,7 +134,7 @@ export function PhoneFrame({ children, dark }: { children: ReactNode; dark?: boo
 export function DemoCaption({ children }: { children: ReactNode }) {
   return (
     <p className="mt-6 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-mute">
-      <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-ink" />
+      <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
       {children}
     </p>
   );

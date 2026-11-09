@@ -118,7 +118,7 @@ export default function PhoneDemo() {
                               <motion.span
                                 className="flex items-center gap-1 rounded-full px-2.5 py-1 text-[9px]"
                                 initial={{ backgroundColor: "rgba(10,10,10,0)", color: "#0a0a0a", border: "1px solid #0a0a0a" }}
-                                animate={{ backgroundColor: "#0a0a0a", color: "#ffffff" }}
+                                animate={{ backgroundColor: "#ff4f1f", color: "#0a0a0a" }}
                                 transition={{ delay: 1.1, duration: 0.3 }}
                               >
                                 <motion.span initial={{ width: 0, opacity: 0 }} animate={{ width: "auto", opacity: 1 }} transition={{ delay: 1.1 }}>

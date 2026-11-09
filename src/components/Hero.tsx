@@ -32,7 +32,7 @@ export function Nav() {
 
   return (
     <>
-      <motion.div className="fixed inset-x-0 top-0 z-[60] h-[2px] origin-left bg-white mix-blend-difference" style={{ scaleX: progress }} />
+      <motion.div className="fixed inset-x-0 top-0 z-[60] h-[3px] origin-left bg-accent" style={{ scaleX: progress }} />
       <motion.header
         className="fixed inset-x-0 top-0 z-50 text-white mix-blend-difference"
         animate={{ y: hidden ? "-100%" : "0%" }}
@@ -128,8 +128,8 @@ export function Hero() {
           <span className="label">Portfolio · 2026</span>
           <span className="label flex items-center gap-2">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-ink opacity-40" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-ink" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
             </span>
             Open to internships
           </span>

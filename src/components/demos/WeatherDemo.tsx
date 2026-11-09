@@ -62,7 +62,7 @@ export default function WeatherDemo() {
                       return (
                         <div key={i} className="relative flex-1">
                           <motion.div
-                            className={`w-full rounded-t-[3px] ${breach && step >= 2 ? "bg-ink" : "bg-ink/20"}`}
+                            className={`w-full rounded-t-[3px] ${breach && step >= 2 ? "bg-accent" : "bg-ink/20"}`}
                             initial={false}
                             animate={{ height: step >= 1 ? `${(g / MAX) * 46}px` : "2px" }}
                             transition={{ duration: 0.7, ease, delay: step === 1 ? bi * 0.1 + i * 0.04 : 0 }}
@@ -110,7 +110,7 @@ export default function WeatherDemo() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 12 }}
                   transition={{ duration: 0.5, ease }}
-                  className="absolute bottom-3 right-3 w-[230px] rounded-lg border border-ink bg-white p-3 shadow-[4px_4px_0_0_#0a0a0a]"
+                  className="absolute bottom-3 right-3 w-[230px] rounded-lg border border-ink bg-white p-3 shadow-[4px_4px_0_0_#ff4f1f]"
                 >
                   <div className="flex items-center justify-between">
                     <span className="label">Email sent</span>

@@ -55,7 +55,7 @@ export default function RatiosDemo() {
                 ))}
                 {step === 1 && (
                   <motion.div
-                    className="pointer-events-none absolute inset-x-0 h-9 border-y border-ink bg-ink/[0.06]"
+                    className="pointer-events-none absolute inset-x-0 h-9 border-y border-accent bg-accent/15"
                     initial={{ top: "-15%" }}
                     animate={{ top: "100%" }}
                     transition={{ duration: 2.2, ease: "linear" }}
@@ -120,7 +120,7 @@ export default function RatiosDemo() {
                   <span className="tabular-nums">{step >= 4 ? "44 passed" : step >= 2 ? "running…" : "idle"}</span>
                 </div>
                 <div className="mt-1.5 h-1 w-full overflow-hidden rounded-full bg-smoke">
-                  <motion.div className="h-full bg-ink" initial={false} animate={{ width: step >= 4 ? "100%" : step >= 2 ? "45%" : "0%" }} transition={{ duration: 1, ease }} />
+                  <motion.div className={`h-full ${step >= 4 ? "bg-accent" : "bg-ink"}`} initial={false} animate={{ width: step >= 4 ? "100%" : step >= 2 ? "45%" : "0%" }} transition={{ duration: 1, ease }} />
                 </div>
                 {step >= 4 && (
                   <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-1.5 flex items-center gap-1 font-mono text-[9px]">

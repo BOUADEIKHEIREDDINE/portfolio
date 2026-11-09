@@ -94,7 +94,7 @@ export default function QuizDemo() {
                             initial={{ opacity: 0, x: 10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: step === 2 ? 0.25 + i * 0.18 : 0, duration: 0.4, ease }}
-                            className={`flex items-center gap-2.5 rounded-md border px-2.5 py-1.5 text-[11.5px] transition-colors duration-500 ${reveal ? "border-ink bg-ink text-white" : "border-line"}`}
+                            className={`flex items-center gap-2.5 rounded-md border px-2.5 py-1.5 text-[11.5px] transition-colors duration-500 ${reveal ? "border-ink bg-accent text-ink" : "border-line"}`}
                           >
                             <span className={`grid h-4 w-4 place-items-center rounded-full border font-mono text-[8.5px] ${reveal ? "border-white" : "border-ink"}`}>{o.l}</span>
                             {o.t}

@@ -104,7 +104,7 @@ export default function RagDemo() {
                     <p className="text-[11.5px] leading-relaxed">
                       {a.split(/(\[\d\])/).map((part, i) =>
                         /\[\d\]/.test(part) ? (
-                          <sup key={i} className="mx-0.5 rounded bg-ink px-1 font-mono text-[8px] text-white">
+                          <sup key={i} className="mx-0.5 rounded bg-accent px-1 font-mono text-[8px] text-ink">
                             {part.slice(1, -1)}
                           </sup>
                         ) : (

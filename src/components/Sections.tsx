@@ -96,7 +96,10 @@ function EntryBlock({ e, n, flip }: { e: Entry; n: string; flip: boolean }) {
         <div className="md:sticky md:top-24">
           <Reveal>
             <div className="flex items-baseline justify-between">
-              <span className="font-mono text-[11px] text-mute">{n}</span>
+              <span className="flex items-center gap-2 font-mono text-[11px] text-mute">
+                <span className="h-2.5 w-2.5 rounded-full border border-ink" style={{ background: e.tint }} />
+                {n}
+              </span>
               <span className="label text-mute">
                 {e.kind} · {e.period}
               </span>
@@ -121,7 +124,7 @@ function EntryBlock({ e, n, flip }: { e: Entry; n: string; flip: boolean }) {
           <Reveal delay={0.1}>
             <div className="mt-6 flex flex-wrap gap-1.5">
               {e.stack.map((s) => (
-                <span key={s} className="rounded-full border border-ink px-2.5 py-1 font-mono text-[10.5px] transition-colors hover:bg-ink hover:text-paper">
+                <span key={s} className="rounded-full border border-ink px-2.5 py-1 font-mono text-[10.5px] transition-colors hover:border-accent hover:bg-accent">
                   {s}
                 </span>
               ))}
@@ -137,7 +140,7 @@ function EntryBlock({ e, n, flip }: { e: Entry; n: string; flip: boolean }) {
       </div>
       <div className={`min-w-0 md:col-span-7 ${flip ? "md:order-1" : ""}`}>
         <Reveal y={40}>
-          <div className="grain rounded-[14px] border border-line bg-smoke/60 p-4 sm:p-8">
+          <div className="grain rounded-[14px] border border-ink/10 p-4 sm:p-8" style={{ background: e.tint }}>
             <Demo />
           </div>
           <DemoCaption>Live demo, recreated with synthetic data · no client data shown</DemoCaption>
@@ -187,7 +190,7 @@ export function Skills() {
                 {g.items.map((s) => (
                   <li
                     key={s}
-                    className="flex items-center gap-2 rounded-full border border-white/25 px-3 py-1.5 text-[13px] transition-colors duration-300 hover:border-white hover:bg-white hover:text-ink"
+                    className="flex items-center gap-2 rounded-full border border-white/25 px-3 py-1.5 text-[13px] transition-colors duration-300 hover:border-accent hover:bg-accent hover:text-ink"
                   >
                     <SkillIcon name={s} className="h-3.5 w-3.5" />
                     {s}
@@ -240,7 +243,7 @@ export function Credentials() {
             <Reveal key={c.code} delay={i * 0.07} className="bg-paper">
               <Wrapper
                 {...(c.href ? { href: c.href, target: "_blank", rel: "noreferrer" } : {})}
-                className={`group flex h-full flex-col items-start gap-8 p-6 transition-colors duration-500 ${c.href ? "hover:bg-ink hover:text-paper" : ""}`}
+                className={`group flex h-full flex-col items-start gap-8 p-6 transition-colors duration-500 ${c.href ? "hover:bg-accent" : ""}`}
               >
                 <Seal code={c.code} ring={`${c.issuer === "Microsoft" ? "MICROSOFT · CERTIFIED" : "FEI · LANGUAGE DIPLOMA"} · ${c.year} · ${c.code} · `} />
                 <div className="mt-auto">
@@ -296,7 +299,7 @@ export function Credentials() {
                     {levels.map((lv, j) => (
                       <motion.span
                         key={lv}
-                        className={`h-1.5 origin-left ${j <= idx ? "bg-ink" : "bg-smoke"}`}
+                        className={`h-1.5 origin-left ${j <= idx ? (j === idx ? "bg-accent" : "bg-ink") : "bg-smoke"}`}
                         initial={{ scaleX: 0 }}
                         whileInView={{ scaleX: 1 }}
                         viewport={{ once: true }}
@@ -338,7 +341,7 @@ export function Contact() {
             </motion.span>
           </span>
           <span className="block overflow-hidden">
-            <motion.span className="block italic" initial={{ y: "100%" }} whileInView={{ y: 0 }} viewport={{ once: true }} transition={{ duration: 1, ease, delay: 0.1 }}>
+            <motion.span className="block italic text-accent" initial={{ y: "100%" }} whileInView={{ y: 0 }} viewport={{ once: true }} transition={{ duration: 1, ease, delay: 0.1 }}>
               something.
             </motion.span>
           </span>
@@ -350,7 +353,7 @@ export function Contact() {
               {profile.email}
             </a>
             <div className="mt-4">
-              <button onClick={copy} className="rounded-full border border-white/30 px-4 py-2 font-mono text-[11px] transition-colors hover:bg-white hover:text-ink">
+              <button onClick={copy} className="rounded-full border border-white/30 px-4 py-2 font-mono text-[11px] transition-colors hover:border-accent hover:bg-accent hover:text-ink">
                 {copied ? "Copied ✓" : "Copy email"}
               </button>
             </div>

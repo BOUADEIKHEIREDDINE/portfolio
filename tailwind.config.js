@@ -9,6 +9,7 @@ module.exports = {
         mute: "#6b6b6b",
         line: "#dcdcd8",
         smoke: "#ececea",
+        accent: "#ff4f1f",
       },
       fontFamily: {
         serif: ["var(--font-serif)", "Georgia", "serif"],

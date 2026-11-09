@@ -111,7 +111,7 @@ export default function MarketDemo() {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0 }}
                         transition={{ delay: i * 0.35, duration: 0.45, ease }}
-                        className="flex gap-2 rounded border-l-2 border-ink bg-paper px-2.5 py-1.5 text-[10.5px] leading-snug"
+                        className="flex gap-2 rounded border-l-2 border-accent bg-paper px-2.5 py-1.5 text-[10.5px] leading-snug"
                       >
                         <span className="font-mono text-[9px] text-mute">0{i + 1}</span>
                         {r}
